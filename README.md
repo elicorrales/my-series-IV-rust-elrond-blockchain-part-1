@@ -114,4 +114,10 @@ sudo apt install -y build-essential
 Your best course now is to ```rm -rf testnet``` (the auto-created sub-dir) and start over.  
 Re-run the ```erdpy testnet config```.  
   
+Finally, we are ready to start up the localnet.  
+  
+## Starting The Local Testnet  
+```
+erdpy testnet start
+```
 
