@@ -126,6 +126,7 @@ erdpy testnet start
 If you're only doing local development and you don't care about retaining data/state between runs of the localnet, this (below) may help.  If you **DO** care, this (below) will **NOT** help.  
   
 Trying to start the localnet on a subsequent run may show a cycling of this output (below).  If so, you can just ```rm -rf testnet``` (the auto-generated directory).  
+#### testnet error output:  
 ```
 [PID=80] ERROR[2022-08-15 17:34:47.534]   economics data request                   observer = http://localhost:10101 error = Get "http://localhost:10101/network/economics": dial tcp 127.0.0.1:10101: connect: connection refused
 [PID=80] WARN [2022-08-15 17:34:47.534]   cannot get node status. will mark as inactive address = http://localhost:10100 error = Get "http://localhost:10100/node/status": dial tcp 127.0.0.1:10100: connect: connection refused
