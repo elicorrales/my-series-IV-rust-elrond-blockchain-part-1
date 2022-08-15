@@ -72,4 +72,46 @@ erdpy config set chainID local-testnet
 erdpy config set proxy http://localhost:7950
 ```
   
+Now we create some directories:  
+```
+mkdir elrond-local-testnet;
+mkdir -p my-first-elrond-project/my-client;
+mkdir -p my-first-elrond-project/my-smart-contracts;
+```
+  
+```
+tree
+.
+├── elrond-local-testnet      #<--- this holds localnet stuff
+└── my-first-elrond-project   #<---our main project dir
+    ├── my-client
+    └── my-smart-contracts
+```
+  
+Go into the directory...and create a file...
+```
+cd elrond-local-testnet
+```
+edit (vim or nano) ```testnet.toml```:  
+```
+[networking]
+port_proxy = 7950
+```
+  
+While still in same directory, run:  
+```
+erdpy testnet config
+```
+  
+(this one takes a while)
+Upon running this command, a new folder called testnet will be added in the current directory. This folder contains the Node & Proxy binaries, their configurations, plus the development wallets.  
+  
+Did it fail?  You might be missing ```gcc``` compiler.  
+```
+sudo apt install -y build-essential
+```
+  
+Your best course now is to ```rm -rf testnet``` (the auto-created sub-dir) and start over.  
+Re-run the ```erdpy testnet config```.  
+  
 
