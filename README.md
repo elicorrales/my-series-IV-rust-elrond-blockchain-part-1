@@ -1,1 +1,16 @@
 # my-series-IV-rust-elrond-blockchain-part-1
+
+### This project is part of a series and includes a video.
+
+See [Here](https://github.com/elicorrales/blockchain-tutorials/blob/main/README.md) for the overall document that
+refers to all the series.  
+  
+# (Optional) Set Up WSL Ubuntu  
+  We are going to try our luck using a fresh install of Ubuntu 22.04.  
+  For more details, please review:  
+  - Video: [Blockchain Programmer - Part 3: How to Set Up Multiple WSL Ubuntu Environments](https://www.youtube.com/watch?v=9hssNB5LiVE&list=PLNKa8O7lX-w5nEQjNbFRQV7e3Sd4qLi44&index=3)  
+  -   Doc: [How-To-Setup-Multiple-WSL-Ubuntu](https://github.com/elicorrales/blockchain-tutorials/blob/main/How-To-Setup-Multiple-WSL-Ubuntu.md)  
+
+# Set Up Local Node (LOCALNET)  
+
+
