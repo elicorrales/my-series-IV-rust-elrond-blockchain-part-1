@@ -28,6 +28,48 @@ sudo apt update && sudo apt -y upgrade
 > and with Smart Contracts (in particular).
   
 It can be installed with this script:  
+First we download the script.  
 ```
 wget -O erdpy-up.py \
     https://raw.githubusercontent.com/ElrondNetwork/elrond-sdk-erdpy/master/erdpy-up.py;
+```
+  
+Then we run the script.  
+```
+python3.10 erdpy-up.py;
+```
+  
+You might encounter an issue, and see the following suggestion:  
+```
+sudo apt install python3.10-venv
+```
+  
+Do that, and re-run the ```python3.10 erdpy-up.py```.  
+  
+You may have to adjust your ```$PATH```.  
+Make sure you're still in ```${HOME}```, and do
+```
+find . -name "*erdpy*"
+```
+  
+Now edit your ```.bashrc``` and at the bottom, add:  
+```
+export PATH=${HOME}/elrondsdk:$PATH;
+```
+  
+Test it by doing ```erdpy --version```.  
+  
+You're going to need some prerequisites for your localnet.  
+```
+erdpy testnet prerequisites
+```
+  
+Set up some global config parameters.  
+```
+erdpy config set chainID local-testnet
+```
+```
+erdpy config set proxy http://localhost:7950
+```
+  
+
