@@ -120,4 +120,45 @@ Finally, we are ready to start up the localnet.
 ```
 erdpy testnet start
 ```
+  
+## Re-Starting The Local Testnet  
+ 
+If you're only doing local development and you don't care about retaining data/state between runs of the localnet, this (below) may help.  If you **DO** care, this (below) will **NOT** help.  
+  
+Trying to start the localnet on a subsequent run may show a cycling of this output (below).  If so, you can just ```rm -rf testnet``` (the auto-generated directory).  
+```
+[PID=80] ERROR[2022-08-15 17:34:47.534]   economics data request                   observer = http://localhost:10101 error = Get "http://localhost:10101/network/economics": dial tcp 127.0.0.1:10101: connect: connection refused
+[PID=80] WARN [2022-08-15 17:34:47.534]   cannot get node status. will mark as inactive address = http://localhost:10100 error = Get "http://localhost:10100/node/status": dial tcp 127.0.0.1:10100: connect: connection refused
+[PID=80] WARN [2022-08-15 17:34:47.534]   economic metrics: get from API           error = sending request error
+[PID=80] ERROR[2022-08-15 17:34:47.534]   validator statistics                     observer = http://localhost:10101 error = no response
+[PID=80] WARN [2022-08-15 17:34:47.534]   validator statistics: get from API       error = validator statistics data not found at any observer
+[PID=80] WARN [2022-08-15 17:34:47.534]   cannot get node status. will mark as inactive address = http://localhost:10101 error = Get "http://localhost:10101/node/status": dial tcp 127.0.0.1:10101: connect: connection refused
+[PID=80] WARN [2022-08-15 17:34:47.535]   cannot get node status. will mark as inactive address = http://localhost:10100 error = Get "http://localhost:10100/node/status": dial tcp 127.0.0.1:10100: connect: connection refused
+[PID=80] WARN [2022-08-15 17:34:47.535]   cannot get node status. will mark as inactive address = http://localhost:10101 error = Get "http://localhost:10101/node/status": dial tcp 127.0.0.1:10101: connect: connection refused
 
+
+[PID=80] ERROR[2022-08-15 17:35:12.554]   heartbeat                                observer = http://localhost:10100 shard = 0 error = {"data":null,"error":"node is starting","code":"internal_issue"}
+[PID=80] ERROR[2022-08-15 17:35:12.554]   heartbeat                                error = heartbeat status not found at any observer shard = 0
+[PID=80] WARN [2022-08-15 17:35:12.554]   heartbeat: get from API                  error = heartbeat status not found at any observer
+
+
+[PID=80] ERROR[2022-08-15 17:35:37.575]   heartbeat                                observer = http://localhost:10100 shard = 0 error = {"data":null,"error":"node is starting","code":"internal_issue"}
+[PID=80] ERROR[2022-08-15 17:35:37.575]   heartbeat                                error = heartbeat status not found at any observer shard = 0
+[PID=80] WARN [2022-08-15 17:35:37.575]   heartbeat: get from API                  error = heartbeat status not found at any observer
+[PID=80] WARN [2022-08-15 17:35:47.537]   cannot get node status. will mark as inactive address = http://localhost:10100 error = observer http://localhost:10100 responded with code 500
+[PID=80] WARN [2022-08-15 17:35:47.539]   cannot get node status. will mark as inactive address = http://localhost:10101 error = observer http://localhost:10101 responded with code 500
+[PID=80] ERROR[2022-08-15 17:35:47.539]   validator statistics                     observer = http://localhost:10101 error = no response
+[PID=80] WARN [2022-08-15 17:35:47.539]   validator statistics: get from API       error = validator statistics data not found at any observer
+[PID=80] WARN [2022-08-15 17:35:47.540]   cannot get node status. will mark as inactive address = http://localhost:10100 error = observer http://localhost:10100 responded with code 500
+[PID=80] WARN [2022-08-15 17:35:47.540]   cannot get node status. will mark as inactive address = http://localhost:10101 error = observer http://localhost:10101 responded with code 500
+```
+  
+Once you have removed the ```testnet``` directory, then do
+```
+erdpy testnet config
+```
+  
+And then,
+```
+erdpy testnet start
+```
